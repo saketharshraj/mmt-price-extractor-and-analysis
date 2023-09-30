@@ -54,6 +54,8 @@ for idx, grp in enumerate(groups, 1):
 
 try:
     choice_idx = int(input("Choose a group number to analyze: "))
+    if choice_idx <= 0:
+        raise IndexError
     chosen_group = groups[choice_idx - 1]  # since index starts at 0
 
     all_data = analyze_data(chosen_group)
